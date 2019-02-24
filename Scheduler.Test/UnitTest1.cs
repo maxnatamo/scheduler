@@ -18,6 +18,10 @@ namespace Scheduler.Test
                 Console.WriteLine( "[" + DateTime.Now.ToString("F") + "] GitHub updated.");
             }, new CronExpression("* * * *") );
 
+            Scheduler.AddJob( "Schedule logger", () => {
+                Console.WriteLine( "Current amount of jobs in job pool: " + Scheduler.GetJobCount() + ".");
+            }, CronShortcut.Daily );
+
             Scheduler.HaltMainThread();
         }
     }
