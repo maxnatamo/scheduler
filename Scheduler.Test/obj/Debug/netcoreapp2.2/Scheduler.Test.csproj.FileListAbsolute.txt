@@ -1,0 +1,17 @@
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/xunit.runner.reporters.netcoreapp10.dll
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/xunit.runner.utility.netcoreapp10.dll
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.Test.deps.json
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.Test.runtimeconfig.json
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.Test.runtimeconfig.dev.json
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.Test.dll
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.Test.pdb
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.dll
+/home/madst/Documents/Scheduler/Scheduler.Test/bin/Debug/netcoreapp2.2/Scheduler.pdb
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.csprojAssemblyReference.cache
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.csproj.CoreCompileInputs.cache
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.AssemblyInfoInputs.cache
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.AssemblyInfo.cs
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.csproj.CopyComplete
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.dll
+/home/madst/Documents/Scheduler/Scheduler.Test/obj/Debug/netcoreapp2.2/Scheduler.Test.pdb

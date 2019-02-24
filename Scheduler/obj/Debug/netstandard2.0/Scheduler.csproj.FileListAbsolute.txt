@@ -1,0 +1,9 @@
+/home/madst/Documents/Scheduler/Scheduler/bin/Debug/netstandard2.0/Scheduler.deps.json
+/home/madst/Documents/Scheduler/Scheduler/bin/Debug/netstandard2.0/Scheduler.dll
+/home/madst/Documents/Scheduler/Scheduler/bin/Debug/netstandard2.0/Scheduler.pdb
+/home/madst/Documents/Scheduler/Scheduler/obj/Debug/netstandard2.0/Scheduler.csprojAssemblyReference.cache
+/home/madst/Documents/Scheduler/Scheduler/obj/Debug/netstandard2.0/Scheduler.csproj.CoreCompileInputs.cache
+/home/madst/Documents/Scheduler/Scheduler/obj/Debug/netstandard2.0/Scheduler.AssemblyInfoInputs.cache
+/home/madst/Documents/Scheduler/Scheduler/obj/Debug/netstandard2.0/Scheduler.AssemblyInfo.cs
+/home/madst/Documents/Scheduler/Scheduler/obj/Debug/netstandard2.0/Scheduler.dll
+/home/madst/Documents/Scheduler/Scheduler/obj/Debug/netstandard2.0/Scheduler.pdb
