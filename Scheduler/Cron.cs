@@ -163,4 +163,13 @@ namespace Scheduler.Cron
             return value >= min && value <= max;
         }
     }
+
+    public static class CronShortcut
+    {
+        public static CronExpression Minutely = new CronExpression( "* * * *" );
+        public static CronExpression Hourly = new CronExpression( "0 * * *" );
+        public static CronExpression Daily = new CronExpression( "0 12 * *" );
+        public static CronExpression Monthly = new CronExpression( "0 0 1 *" );
+        public static CronExpression Yearly = new CronExpression( "0 0 1 1" );
+    }
 }
