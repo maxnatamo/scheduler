@@ -3,31 +3,22 @@ using System.Threading;
 using Xunit;
 
 using Scheduler;
+using Scheduler.Cron;
 
 namespace Scheduler.Test
 {
     public class UnitTest1
     {
-        static void Process( Object o )
-        {
-            Console.WriteLine("Process run.");
-        }
-
         [Fact]
         public void Test1()
         {
             Scheduler.InitializeScheduler();
 
             Scheduler.AddJob( "GitHub-Updater", () => {
-                Console.WriteLine("GitHub updated.");
-                Thread.Sleep( 5000 );
-            }, (Scheduler.Cron)10 );
+                Console.WriteLine( "[" + DateTime.Now.ToString("F") + "] GitHub updated.");
+            }, new CronExpression("* * * *") );
 
-            Scheduler.AddJob( "JobCount", () => {
-                Console.WriteLine("Job count: " + Scheduler.GetJobCount());
-            }, Cron.Secondly );
-
-            new ManualResetEvent(false).WaitOne();
+            Scheduler.HaltMainThread();
         }
     }
 }

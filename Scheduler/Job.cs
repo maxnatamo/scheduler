@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using Scheduler.Cron;
 
 namespace Scheduler.Jobs
 {
@@ -7,21 +8,25 @@ namespace Scheduler.Jobs
     {
         public string name;
         protected Action methodCall;
-        protected Cron cron;
+        protected CronExpression cron;
+        protected DateTime nextRunTime;
 
-        private DateTime nextRun;
-
-        public Job( string _name, Action _methodCall, Cron _cron )
+        public Job( string name, Action methodCall, CronExpression cron )
         {
-            name = _name;
-            methodCall = _methodCall;
-            cron = _cron;
+            this.name           = name;
+            this.methodCall     = methodCall;
+            this.cron           = cron;
+
+            nextRunTime = cron.GetNextRunTime();
         }
 
         public void RunTask()
         {
-            if((DateTime.Now - nextRun).TotalSeconds >= 0) {
-                nextRun = DateTime.Now + new TimeSpan( (int)cron * TimeSpan.TicksPerSecond );
+            // Checks whether we've reached the nextRunTime.
+            // We also check whether the current DateTime's Second variable
+            // is zero, so the method call isn't executed every second.
+            if( DateTime.Now > nextRunTime && DateTime.Now.Second == 0 ) {
+                nextRunTime = cron.GetNextRunTime();
                 methodCall();
             }
         }
