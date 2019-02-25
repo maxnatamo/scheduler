@@ -21,6 +21,13 @@ namespace Scheduler.Test
                 Console.WriteLine( "This is a one-shot job.");
             } );
 
+            // You can also use continuation calls. If set, the continuation method
+            // will execute after the job has finished. Therefore, it is not available for
+            // scheduled jobs, as they never finish. 
+            Scheduler.ContinueWith( "One-time job", () => {
+                Console.WriteLine( "The one-shot job has finished executing." );
+            } );
+
             // This job is a repeating job, meaning it
             // runs every cycle of the supplied Cron expression.
             Scheduler.AddJob( "GitHub-Updater", () => {
@@ -33,6 +40,10 @@ namespace Scheduler.Test
                 Console.WriteLine( "Current amount of jobs in job pool: " + Scheduler.GetJobCount() + ".");
             }, JobDelay.FromMinutes( 1 ) );
 
+            // Scheduler.HaltMainThread() is used to halt the main thread,
+            // if there are no other halting statements.
+            // This prevents the program from exiting, before all jobs are run.
+            // The main thread will continue, when the job pool is empty.
             Scheduler.HaltMainThread();
         }
     }

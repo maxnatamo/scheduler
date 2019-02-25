@@ -14,6 +14,8 @@ namespace Scheduler
 
         public static void InitializeScheduler()
         {
+            Console.WriteLine( "[" + DateTime.Now.ToString("F") + "] Scheduler initialized.");
+            
             ThreadPool.QueueUserWorkItem( new WaitCallback( ( Object o ) => {
                 for(;;) {
                     foreach(var job in jobPool.ToArray()) {
@@ -89,12 +91,32 @@ namespace Scheduler
         }
 
         /// <summary>
+        /// Adds a continuation method to the specified job.
+        /// A continuation method is executed, when the parent job
+        /// is finished executing. This method is not available for scheduled jobs.
+        /// <param name="jobName">The job name to add continuation call.</param>
+        /// <param name="continuationCall">The method to call, when the job has finished executing.</param>
+        /// <returns>True if the continuation call was added successfully, false otherwise.</returns>
+        /// </summary>
+        public static bool ContinueWith( string jobName, Action continuationCall )
+        {
+            foreach( var job in jobPool.ToArray() ) {
+                if( job.name == jobName ) {
+                    return job.AddContinuationCall( continuationCall );
+                }
+            }
+
+            Console.WriteLine("[WARNING] Jobname '" + jobName + "' was not found in the job pool.");
+            return false;
+        }
+
+        /// <summary>
         /// Check whether the specified job is in the job pool.
         /// <param name="jobName">The job name to check for.</param>
         /// </summary>
         public static bool JobPoolHasJob ( string jobName )
         {
-            foreach( var job in jobPool ) {
+            foreach( var job in jobPool.ToArray() ) {
                 if( job.name == jobName ) {
                     return true;
                 }
